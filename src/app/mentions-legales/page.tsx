@@ -45,8 +45,8 @@ export default function LegalPage() {
             Propriété intellectuelle
           </h2>
           <p className="text-ios-secondary">
-            L&apos;ensemble des contenus (textes, visuels, marques) présentés sur
-            ce site sont protégés. Toute reproduction non autorisée est
+            L&apos;ensemble des contenus (textes, visuels, marques) présentés
+            sur ce site sont protégés. Toute reproduction non autorisée est
             interdite.
           </p>
         </section>
@@ -57,9 +57,9 @@ export default function LegalPage() {
           </h2>
           <p className="text-ios-secondary">
             Le formulaire de contact est actuellement en mode démonstration :
-            aucune donnée n&apos;est transmise ni stockée côté serveur. Lorsqu&apos;un
-            envoi réel sera activé, une politique de confidentialité détaillée
-            sera publiée.
+            aucune donnée n&apos;est transmise ni stockée côté serveur.
+            Lorsqu&apos;un envoi réel sera activé, une politique de
+            confidentialité détaillée sera publiée.
           </p>
         </section>
       </Card>

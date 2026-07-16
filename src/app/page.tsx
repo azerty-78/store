@@ -53,7 +53,7 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="p-3">
-                  <h3 className="text-sm font-semibold text-foreground">
+                  <h3 className="text-foreground text-sm font-semibold">
                     {category.name}
                   </h3>
                   <p className="text-ios-secondary mt-1 line-clamp-2 text-xs">
@@ -83,9 +83,9 @@ export default function HomePage() {
           <h2 className="text-foreground text-xl font-bold">À propos</h2>
           <p className="text-ios-secondary text-sm leading-relaxed">
             Screentech accompagne particuliers et professionnels dans la
-            réparation et l&apos;équipement de smartphones. Pièces sélectionnées,
-            transparence sur les prix, et un atelier à votre écoute — sans
-            paiement en ligne, uniquement sur devis.
+            réparation et l&apos;équipement de smartphones. Pièces
+            sélectionnées, transparence sur les prix, et un atelier à votre
+            écoute — sans paiement en ligne, uniquement sur devis.
           </p>
           <div className="flex justify-center sm:justify-start">
             <Link href="/a-propos">

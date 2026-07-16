@@ -6,7 +6,8 @@ const products: Product[] = [
     id: "prod-1",
     slug: "ecran-iphone-15",
     name: "Écran OLED iPhone 15",
-    shortDescription: "Remplacement OLED haute luminosité, True Tone compatible.",
+    shortDescription:
+      "Remplacement OLED haute luminosité, True Tone compatible.",
     description:
       "Écran OLED de remplacement pour iPhone 15. Luminosité élevée, couleurs fidèles et compatibilité True Tone. Livré avec kit de pose basique et garantie 12 mois pièces et main-d'œuvre lorsque l'installation est réalisée en atelier.",
     price: 189,
@@ -48,7 +49,7 @@ const products: Product[] = [
     name: "Verre trempé 9H universel",
     shortDescription: "Protection d'écran 9H, anti-rayures et anti-traces.",
     description:
-      "Verre trempé 9H compatible avec la plupart des smartphones 6,1\" à 6,7\". Pose facile, bords 2.5D et résistance aux chocs du quotidien. Lot de 2 pièces.",
+      'Verre trempé 9H compatible avec la plupart des smartphones 6,1" à 6,7". Pose facile, bords 2.5D et résistance aux chocs du quotidien. Lot de 2 pièces.',
     price: 14.9,
     currency: "EUR",
     categoryId: "cat-coques",
@@ -178,7 +179,7 @@ const products: Product[] = [
     name: "Coque antichoc universelle",
     shortDescription: "Protection renforcée coins et dos, grip texturé.",
     description:
-      "Coque antichoc semi-rigide adaptée aux smartphones 6,1\"–6,7\". Coins amortisseurs, dos texturé antidérapant et découpes précises pour boutons et ports.",
+      'Coque antichoc semi-rigide adaptée aux smartphones 6,1"–6,7". Coins amortisseurs, dos texturé antidérapant et découpes précises pour boutons et ports.',
     price: 24.9,
     currency: "EUR",
     categoryId: "cat-coques",
@@ -254,7 +255,10 @@ export function getFeaturedProducts(): Product[] {
   return products.filter((product) => product.featured);
 }
 
-export function formatPrice(price: number, currency: Product["currency"] = "EUR"): string {
+export function formatPrice(
+  price: number,
+  currency: Product["currency"] = "EUR",
+): string {
   return new Intl.NumberFormat("fr-FR", {
     style: "currency",
     currency,

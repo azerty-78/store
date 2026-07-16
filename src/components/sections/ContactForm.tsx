@@ -11,14 +11,8 @@ import { TextArea } from "@/components/ui/TextArea";
 import { cn } from "@/lib/cn";
 
 const contactSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .min(2, "Le nom doit contenir au moins 2 caractères."),
-  email: z
-    .string()
-    .trim()
-    .email("Veuillez saisir une adresse e-mail valide."),
+  name: z.string().trim().min(2, "Le nom doit contenir au moins 2 caractères."),
+  email: z.string().trim().email("Veuillez saisir une adresse e-mail valide."),
   phone: z
     .string()
     .trim()
@@ -44,7 +38,10 @@ type ContactFormProps = {
   className?: string;
 };
 
-export function ContactForm({ defaultSubject = "", className }: ContactFormProps) {
+export function ContactForm({
+  defaultSubject = "",
+  className,
+}: ContactFormProps) {
   const [submitted, setSubmitted] = useState(false);
 
   const {
@@ -80,20 +77,16 @@ export function ContactForm({ defaultSubject = "", className }: ContactFormProps
       {submitted ? (
         <div
           role="status"
-          className="rounded-2xl bg-ios-green/15 px-4 py-3 text-sm text-ios-green"
+          className="bg-ios-green/15 text-ios-green rounded-2xl px-4 py-3 text-sm"
         >
-          Merci ! Votre message a bien été validé (simulation — aucun envoi
-          réel pour l&apos;instant).
+          Merci ! Votre message a bien été validé (simulation — aucun envoi réel
+          pour l&apos;instant).
         </div>
       ) : null}
 
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="space-y-4"
-        noValidate
-      >
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
         <div className="space-y-2">
-          <label htmlFor="name" className="text-sm font-medium text-foreground">
+          <label htmlFor="name" className="text-foreground text-sm font-medium">
             Nom complet
           </label>
           <Input
@@ -111,7 +104,7 @@ export function ContactForm({ defaultSubject = "", className }: ContactFormProps
         <div className="space-y-2">
           <label
             htmlFor="email"
-            className="text-sm font-medium text-foreground"
+            className="text-foreground text-sm font-medium"
           >
             E-mail
           </label>
@@ -131,7 +124,7 @@ export function ContactForm({ defaultSubject = "", className }: ContactFormProps
         <div className="space-y-2">
           <label
             htmlFor="phone"
-            className="text-sm font-medium text-foreground"
+            className="text-foreground text-sm font-medium"
           >
             Téléphone{" "}
             <span className="text-ios-secondary font-normal">(optionnel)</span>
@@ -152,7 +145,7 @@ export function ContactForm({ defaultSubject = "", className }: ContactFormProps
         <div className="space-y-2">
           <label
             htmlFor="subject"
-            className="text-sm font-medium text-foreground"
+            className="text-foreground text-sm font-medium"
           >
             Sujet
           </label>
@@ -170,7 +163,7 @@ export function ContactForm({ defaultSubject = "", className }: ContactFormProps
         <div className="space-y-2">
           <label
             htmlFor="message"
-            className="text-sm font-medium text-foreground"
+            className="text-foreground text-sm font-medium"
           >
             Message
           </label>
@@ -186,7 +179,11 @@ export function ContactForm({ defaultSubject = "", className }: ContactFormProps
           ) : null}
         </div>
 
-        <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto">
+        <Button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full sm:w-auto"
+        >
           {isSubmitting ? "Envoi…" : "Envoyer le message"}
         </Button>
       </form>

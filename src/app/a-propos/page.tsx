@@ -24,7 +24,9 @@ export default function AboutPage() {
       </header>
 
       <Card className="space-y-3">
-        <h2 className="text-foreground text-lg font-semibold">Notre approche</h2>
+        <h2 className="text-foreground text-lg font-semibold">
+          Notre approche
+        </h2>
         <ul className="text-ios-secondary list-inside list-disc space-y-2 text-sm">
           <li>Sélection soignée de pièces et accessoires</li>
           <li>Conseils personnalisés selon votre appareil</li>

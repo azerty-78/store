@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CategoryFilter } from "@/components/sections/CategoryFilter";
 import { ProductGrid } from "@/components/sections/ProductGrid";
-import {
-  getAllCategories,
-  getCategoryBySlug,
-} from "@/data/mock-categories";
+import { getAllCategories, getCategoryBySlug } from "@/data/mock-categories";
 import { getProductsByCategorySlug } from "@/data/mock-products";
 
 type PageProps = {

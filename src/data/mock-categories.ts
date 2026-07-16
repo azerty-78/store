@@ -29,8 +29,7 @@ const categories: Category[] = [
     id: "cat-accessoires",
     slug: "accessoires",
     name: "Accessoires",
-    description:
-      "Chargeurs, câbles, écouteurs et accessoires essentiels.",
+    description: "Chargeurs, câbles, écouteurs et accessoires essentiels.",
     image: "/images/produits/cat-accessoires.svg",
   },
 ];

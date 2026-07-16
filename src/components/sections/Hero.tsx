@@ -10,7 +10,7 @@ export function Hero({ className }: HeroProps) {
   return (
     <section
       className={cn(
-        "relative overflow-hidden rounded-3xl bg-gradient-to-br from-ios-blue to-[#0051D4] px-6 py-14 text-white sm:px-10 sm:py-20",
+        "from-ios-blue relative overflow-hidden rounded-3xl bg-gradient-to-br to-[#0051D4] px-6 py-14 text-white sm:px-10 sm:py-20",
         className,
       )}
     >
@@ -35,7 +35,7 @@ export function Hero({ className }: HeroProps) {
         </p>
         <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-start">
           <Link href="/catalogue">
-            <Button className="bg-white text-ios-blue hover:bg-white/90 active:bg-white/80 min-w-44">
+            <Button className="text-ios-blue min-w-44 bg-white hover:bg-white/90 active:bg-white/80">
               Voir le catalogue
             </Button>
           </Link>
