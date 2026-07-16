@@ -1,0 +1,23 @@
+---
+description: Contexte global du projet — stack technique et style iOS à toujours respecter
+globs:
+alwaysApply: true
+---
+
+# Contexte du projet
+Site vitrine e-commerce, sans paiement en ligne ni appel API externe. Stack : Next.js (App Router) + TypeScript + Tailwind CSS, gestionnaire de paquets npm. Les données sont mockées pour l'instant (src/data/), Prisma/PostgreSQL viendront plus tard sans réécrire les pages.
+
+# Style visuel — à toujours respecter (thème iOS / Apple Human Interface Guidelines)
+- Coins très arrondis partout : rounded-2xl/3xl pour les cards et conteneurs, rounded-full pour les boutons, pills, champs de recherche, avatars
+- Palette iOS : bleu #007AFF, vert #34C759, rouge #FF3B30, fond clair #F2F2F7, gris de texte secondaire #8E8E93 ; support du mode sombre (#000000/#1C1C1E)
+- Typographie : pile système -apple-system, BlinkMacSystemFont en priorité
+- Ombres toujours douces et discrètes, jamais dures/marquées ; surfaces flottantes (navbar, modales, bottom sheets) en backdrop-blur translucide
+- Icônes : react-icons/io5 (Ionicons) uniquement, ne jamais utiliser un autre set d'icônes
+- Micro-interactions avec Framer Motion : animations courtes type "spring", léger effet d'appui (scale down) sur les éléments cliquables
+- Toujours réutiliser les composants de src/components/ui/, ne jamais dupliquer un style en inline si un composant équivalent existe déjà
+
+# Conventions de code
+- Noms de composants, variables et fonctions en anglais ; textes affichés à l'utilisateur (UI) en français
+- TypeScript strict, jamais de "any"
+- Server Components par défaut, "use client" uniquement si nécessaire (hooks, interactivité)
+- Utiliser cn() (clsx +
