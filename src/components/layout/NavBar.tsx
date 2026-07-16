@@ -3,7 +3,9 @@ import { cn } from "@/lib/cn";
 
 const navLinks = [
   { href: "/", label: "Accueil" },
-  { href: "/demo", label: "Design system" },
+  { href: "/catalogue", label: "Catalogue" },
+  { href: "/a-propos", label: "À propos" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function NavBar() {
@@ -20,7 +22,7 @@ export function NavBar() {
           href="/"
           className="text-ios-blue text-lg font-bold tracking-tight transition-opacity hover:opacity-80"
         >
-          Store
+          Screentech
         </Link>
         <ul className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (

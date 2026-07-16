@@ -5,8 +5,12 @@ import { NavBar } from "@/components/layout/NavBar";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Store",
-  description: "Site vitrine e-commerce",
+  title: {
+    default: "Screentech",
+    template: "%s",
+  },
+  description:
+    "Screentech — vitrine de pièces, écrans et accessoires smartphone. Devis gratuit.",
 };
 
 export default function RootLayout({

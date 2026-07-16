@@ -4,14 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import {
-  IoCart,
-  IoCartOutline,
+  IoCall,
+  IoCallOutline,
   IoGrid,
   IoGridOutline,
   IoHome,
   IoHomeOutline,
-  IoPerson,
-  IoPersonOutline,
+  IoInformationCircle,
+  IoInformationCircleOutline,
 } from "react-icons/io5";
 import { cn } from "@/lib/cn";
 import type { IconType } from "react-icons";
@@ -21,6 +21,7 @@ type TabItem = {
   label: string;
   icon: IconType;
   activeIcon: IconType;
+  match: (pathname: string) => boolean;
 };
 
 const tabs: TabItem[] = [
@@ -29,24 +30,29 @@ const tabs: TabItem[] = [
     label: "Accueil",
     icon: IoHomeOutline,
     activeIcon: IoHome,
+    match: (pathname) => pathname === "/",
   },
   {
-    href: "/demo",
+    href: "/catalogue",
     label: "Catalogue",
     icon: IoGridOutline,
     activeIcon: IoGrid,
+    match: (pathname) =>
+      pathname === "/catalogue" || pathname.startsWith("/catalogue/"),
   },
   {
-    href: "/demo",
-    label: "Panier",
-    icon: IoCartOutline,
-    activeIcon: IoCart,
+    href: "/a-propos",
+    label: "À propos",
+    icon: IoInformationCircleOutline,
+    activeIcon: IoInformationCircle,
+    match: (pathname) => pathname === "/a-propos",
   },
   {
-    href: "/demo",
-    label: "Compte",
-    icon: IoPersonOutline,
-    activeIcon: IoPerson,
+    href: "/contact",
+    label: "Contact",
+    icon: IoCallOutline,
+    activeIcon: IoCall,
+    match: (pathname) => pathname === "/contact",
   },
 ];
 
@@ -65,11 +71,11 @@ export function MobileTabBar() {
     >
       <ul className="flex items-stretch justify-around px-2 pt-2 pb-1">
         {tabs.map((tab) => {
-          const isActive = pathname === tab.href;
+          const isActive = tab.match(pathname);
           const Icon = isActive ? tab.activeIcon : tab.icon;
 
           return (
-            <li key={tab.label} className="flex-1">
+            <li key={tab.href} className="flex-1">
               <Link
                 href={tab.href}
                 className="flex flex-col items-center gap-0.5 py-1"
